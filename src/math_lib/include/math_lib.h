@@ -1,5 +1,5 @@
 #pragma once
-
+int factorial(int n);
 namespace MathLib
 {
 	// Function for addition
