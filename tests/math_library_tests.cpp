@@ -54,3 +54,9 @@ TEST_F(MathLibTestFixture, DivideByZero)
         EXPECT_EQ(e.what(), "Division by zero is not allowed.");
     }
 }
+
+TEST_f(MathLibTestFixture, AverageDoobleArray) {
+    double numbers[] = {1.5, 2.5, 3.5, 4.5, 5.5};
+    size_t size = sizeof(numbers) / sizeof(numbers[0]);
+    EXPECT_DOUBLE_EQ(MathLib::average(numbers, size), 3.5);
+}
