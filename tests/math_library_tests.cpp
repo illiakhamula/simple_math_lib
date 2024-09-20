@@ -54,3 +54,9 @@ TEST_F(MathLibTestFixture, DivideByZero)
         EXPECT_EQ(e.what(), "Division by zero is not allowed.");
     }
 }
+TEST(MathLibraryTest, Factorial) {
+     EXPECT_EQ(factorial(0), 1);
+     EXPECT_EQ(factorial(1), 1);
+     EXPECT_EQ(factorial(5), 120);
+     EXPECT_EQ(factorial(6), 720);
+}
