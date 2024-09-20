@@ -2,8 +2,8 @@
 
 namespace MathLib
 {
-	bool isEqual(double a, double b, double tolerance = 1.e-8f)
+	bool isEqual(double a, double b, double tolerance)
 	{
-		return abs(x - y) <= tolerance;
+		return abs(a - b) <= tolerance;
 	}
 }
