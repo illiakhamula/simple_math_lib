@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include <exception>
 
 namespace MathLib
@@ -10,21 +11,21 @@ namespace MathLib
 	{
 		return a + b;
 	}
-	
+
 	// Function for subtraction
 	template <typename T>
 	T subtract(T a, T b)
 	{
 		return a - b;
 	}
-	
+
 	// Function for multiplication
 	template <typename T>
 	T multiply(T a, T b)
 	{
 		return a * b;
 	}
-	
+
 	// Function for division
 	template <typename T>
 	T divide(T a, T b)
@@ -35,6 +36,8 @@ namespace MathLib
 		}
 		return a / b;
 	}
-	
+
 	bool isEqual(double a, double b, double tolerance = 1.e-8f);
+
+	double median(const std::vector<double>& arr);
 }

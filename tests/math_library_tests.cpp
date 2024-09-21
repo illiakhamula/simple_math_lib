@@ -6,15 +6,14 @@
 class MathLibTestFixture : public ::testing::Test
 {
 protected:
-
     void SetUp() override
     {
-		// Do some job before test run
+        // Do some job before test run
     }
 
     void TearDown() override
     {
-		// Do some job after test run
+        // Do some job after test run
     }
 };
 
@@ -33,8 +32,7 @@ TEST_F(MathLibTestFixture, SubTwoValues)
 
 TEST_F(MathLibTestFixture, MultiplyTwoValues)
 {
-    EXPECT_NE(MathLib::multiply(10, 7), 70);
-    EXPECT_EQ(MathLib::multiply(10, 7), 71);
+    EXPECT_EQ(MathLib::multiply(10, 7), 70);
 }
 
 TEST_F(MathLibTestFixture, DivideTwoValues)
@@ -49,8 +47,35 @@ TEST_F(MathLibTestFixture, DivideByZero)
     {
         MathLib::divide(10, 0);
     }
-    catch(const std::exception& e)
+    catch (const std::exception& e)
     {
-        EXPECT_EQ(e.what(), "Division by zero is not allowed.");
+        EXPECT_STREQ(e.what(), "Division by zero is not allowed.");
+    }
+}
+
+TEST_F(MathLibTestFixture, MedianOfValues)
+{
+    std::vector<double> arr1 = { 5, 1, 3, 2, 4 };
+    EXPECT_EQ(MathLib::median(arr1), 3.0);
+
+    std::vector<double> arr2 = { 5, 1, 3, 2, 4, 6 };
+    EXPECT_EQ(MathLib::median(arr2), 3.5);
+
+    std::vector<double> arr3 = { 7 };
+    EXPECT_EQ(MathLib::median(arr3), 7.0);
+
+    std::vector<double> arr4 = {};
+    try
+    {
+        MathLib::median(arr4);
+        FAIL() << "Expected std::invalid_argument"; 
+    }
+    catch (const std::invalid_argument& e)
+    {
+        EXPECT_STREQ(e.what(), "Array is empty, median cannot be calculated.");
+    }
+    catch (...)
+    {
+        FAIL() << "Expected std::invalid_argument";  
     }
 }
