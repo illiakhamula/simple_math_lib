@@ -27,7 +27,7 @@ namespace MathLib
 	
 	// Function for division
 	template <typename T>
-	T divide(T a, T b)
+	T divide(T a, T b) 
 	{
 		if (b == 0)
 		{
