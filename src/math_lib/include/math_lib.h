@@ -39,7 +39,7 @@ namespace MathLib
     template <typename T>
     T average(const T* number, size_t size) {
         if(size == 0) {             
-            return static_cast<T>(0);                 
+            return throw "Emty array";                 
         }         
         T sum = 0;         
         for(size_t i = 0; i <= size; i++) {             
