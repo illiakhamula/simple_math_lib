@@ -6,4 +6,8 @@ namespace MathLib
 	{
 		return abs(a - b) <= tolerance;
 	}
+
+    template double average(const double* number, size_t size);
 }
+
+
