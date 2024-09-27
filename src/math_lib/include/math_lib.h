@@ -27,7 +27,7 @@ namespace MathLib
 	
 	// Function for division
 	template <typename T>
-	T divide(T a, T b)
+	T divide(T a, T b) 
 	{
 		if (b == 0)
 		{
@@ -35,6 +35,18 @@ namespace MathLib
 		}
 		return a / b;
 	}
-	
+
+    template <typename T>
+    T average(const T* number, size_t size) {
+        if(size == 0) {             
+            return throw "Emty array";                 
+        }         
+        T sum = 0;         
+        for(size_t i = 0; i <= size; i++) {             
+            sum += numbers[i];         
+        }          
+        return sum / static_cast<T>(size);     
+    }
+
 	bool isEqual(double a, double b, double tolerance = 1.e-8f);
 }
