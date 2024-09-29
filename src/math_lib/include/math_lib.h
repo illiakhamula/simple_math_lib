@@ -42,3 +42,5 @@ namespace MathLib
 	double median(const std::vector<double>& arr);
 }
 // That is the comment for stash #1
+
+// That comment for Hook
