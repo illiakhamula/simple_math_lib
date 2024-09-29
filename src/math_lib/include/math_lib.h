@@ -16,14 +16,14 @@ namespace MathLib
 	template <typename T>
 	T subtract(T a, T b)
 	{
-		return a - b;
+		return a - b; // a subtract b
 	}
 
 	// Function for multiplication
 	template <typename T>
 	T multiply(T a, T b)
 	{
-		return a * b;
+		return a * b; // a multiply b
 	}
 
 	// Function for division
@@ -34,7 +34,7 @@ namespace MathLib
 		{
 			throw "Division by zero is not allowed.";
 		}
-		return a / b;
+		return a / b; // a divide b
 	}
 
 	bool isEqual(double a, double b, double tolerance = 1.e-8f);
