@@ -9,7 +9,7 @@ namespace MathLib
 	template <typename T>
 	T add(T a, T b)
 	{
-		return a + b;
+		return a + b; // Change for patch
 	}
 
 	// Function for subtraction
@@ -41,3 +41,4 @@ namespace MathLib
 
 	double median(const std::vector<double>& arr);
 }
+// That is the comment for stash #1
