@@ -9,7 +9,7 @@ namespace MathLib
 	template <typename T>
 	T add(T a, T b)
 	{
-		return a + b; // Change for patch
+		return a + b; // a add b
 	}
 
 	// Function for subtraction
@@ -38,9 +38,7 @@ namespace MathLib
 	}
 
 	bool isEqual(double a, double b, double tolerance = 1.e-8f);
-
+	
+	// Function for median
 	double median(const std::vector<double>& arr);
 }
-// That is the comment for stash #1
-
-// That comment for Hook
