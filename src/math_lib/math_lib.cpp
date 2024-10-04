@@ -56,42 +56,11 @@ namespace MathLib
     // Function to calculate least common multiple (LCM)
     int leastCommonMultiple(int a, int b)
     {
-        int lcm = 1;
-        int maxNum = std::max(a, b);
-        for (int i = maxNum; i <= a * b; i += maxNum)
-        {
-            if (i % a == 0 && i % b == 0)
-            {
-                lcm = i;
-                break;
-            }
-        }
-        return lcm;
+        return (a * b) / GCD(a, b);
     }
 
-    // Function for square root calculation
-    template <typename T>
-    double sqrt(T a)
-    {
-		if (b == 0) return a;
-		return GCD(b, a % b);
-	}
 
     double findThirdAngle(double angle1, double angle2){
-        return 180 - (angle1 + angle2);
-        if (a == 0)
-            return 0;
-        if (a < 0)
-            throw std::invalid_argument("Cannot get the square root of a negative number");
-        double x = a;
-        double result;
-        while (true)
-        {
-            result = 0.5 * (x + (a / x));
-            if (isEqual(result, x, 0.00001))
-                break;
-            x = result;
-        }
-        return result;
+        return 180.0 - (angle1 + angle2);
     }
 }
