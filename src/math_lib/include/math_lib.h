@@ -54,21 +54,18 @@ namespace MathLib
     template <typename T>
     double sqrt(T a)
     {
-        if (a == 0)
-            return 0;
         if (a < 0)
             throw std::invalid_argument("Cannot get the square root of a negative number");
+        
         double x = a;
         double result;
-        int count = 0;
-        while (true)
+        
+        do
         {
-            count++;
             result = 0.5 * (x + (a / x));
-            if (isEqual(result, x, 0.00001))
-                break;
             x = result;
-        }
+        } while (!isEqual(result, x, 0.00001));
+        
         return result;
     }
 
