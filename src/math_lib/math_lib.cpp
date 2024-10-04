@@ -42,5 +42,9 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+    double findThirdAngle(double angle1, double angle2){
+        return 180 - (angle1 + angle2);
+    }
 }
 
