@@ -72,6 +72,9 @@ namespace MathLib
         return result;
     }
 
+    double findThirdAngle(double angle1, double angle2);
+
     // Function to check if a number is prime
     bool isPrime(int n);
+
 }
