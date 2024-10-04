@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <exception>
+#include <stdexcept>
 
 namespace MathLib
 {
@@ -46,13 +47,31 @@ namespace MathLib
     // Function for greatest common divisor (GCD)
     int GCD(int a, int b);
 
+    // Function for least common multiple (LCM)
+    int leastCommonMultiple(int a, int b);
+
     // Function for square root
     template <typename T>
-    double sqrt(T a);
+    double sqrt(T a)
+    {
+        if (a == 0)
+            return 0;
+        if (a < 0)
+            throw std::invalid_argument("Cannot get the square root of a negative number");
+        double x = a;
+        double result;
+        int count = 0;
+        while (true)
+        {
+            count++;
+            result = 0.5 * (x + (a / x));
+            if (isEqual(result, x, 0.00001))
+                break;
+            x = result;
+        }
+        return result;
+    }
 
     // Function to check if a number is prime
     bool isPrime(int n);
-
-    // Function for least common multiple (LCM)
-    int leastCommonMultiple(int a, int b);
 }

@@ -33,6 +33,7 @@ TEST_F(MathLibTestFixture, SubTwoValues)
 TEST_F(MathLibTestFixture, MultiplyTwoValues)
 {
     EXPECT_EQ(MathLib::multiply(10, 7), 70);
+    EXPECT_NE(MathLib::multiply(10, 7), 71);
 }
 
 TEST_F(MathLibTestFixture, DivideTwoValues)
@@ -43,14 +44,7 @@ TEST_F(MathLibTestFixture, DivideTwoValues)
 
 TEST_F(MathLibTestFixture, DivideByZero)
 {
-    try
-    {
-        MathLib::divide(10, 0);
-    }
-    catch (const std::exception& e)
-    {
-        EXPECT_STREQ(e.what(), "Division by zero is not allowed.");
-    }
+    EXPECT_THROW(MathLib::divide(10, 0), std::invalid_argument);
 }
 
 TEST_F(MathLibTestFixture, MedianOfValues)
@@ -65,17 +59,31 @@ TEST_F(MathLibTestFixture, MedianOfValues)
     EXPECT_EQ(MathLib::median(arr3), 7.0);
 
     std::vector<double> arr4 = {};
-    try
-    {
-        MathLib::median(arr4);
-        FAIL() << "Expected std::invalid_argument"; 
-    }
-    catch (const std::invalid_argument& e)
-    {
-        EXPECT_STREQ(e.what(), "Array is empty, median cannot be calculated.");
-    }
-    catch (...)
-    {
-        FAIL() << "Expected std::invalid_argument";  
-    }
+    EXPECT_THROW(MathLib::median(arr4), std::invalid_argument);
+}
+
+TEST_F(MathLibTestFixture, SquareRoot)
+{
+    EXPECT_THROW(MathLib::sqrt(-1), std::invalid_argument);
+}
+
+TEST_F(MathLibTestFixture, LeastCommonMultiple)
+{
+    EXPECT_EQ(MathLib::leastCommonMultiple(4, 6), 12);
+    EXPECT_EQ(MathLib::leastCommonMultiple(7, 5), 35);
+    EXPECT_EQ(MathLib::leastCommonMultiple(10, 5), 10);
+    EXPECT_NE(MathLib::leastCommonMultiple(4, 6), 3);
+}
+
+TEST_F(MathLibTestFixture, IsPrimeTest)
+{
+    EXPECT_TRUE(MathLib::isPrime(2));
+    EXPECT_TRUE(MathLib::isPrime(3));
+    EXPECT_FALSE(MathLib::isPrime(4));
+    EXPECT_TRUE(MathLib::isPrime(5));
+}
+
+TEST_F(MathLibTestFixture, GreatestCommonDivider)
+{
+    EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }

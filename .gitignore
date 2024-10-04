@@ -33,3 +33,7 @@
 
 # build folder if exist
 build/
+
+
+.vs/
+

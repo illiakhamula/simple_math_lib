@@ -1,14 +1,16 @@
 #include "math_lib.h"
-#include <algorithm>
 #include <cmath>
+#include <algorithm>
 
 namespace MathLib
 {
+    // Function to check equality with tolerance
     bool isEqual(double a, double b, double tolerance)
     {
         return std::abs(a - b) <= tolerance;
     }
 
+    // Function to calculate the median of a vector
     double median(const std::vector<double>& arr)
     {
         if (arr.empty())
@@ -30,12 +32,44 @@ namespace MathLib
         }
     }
 
+    // Function for greatest common divisor (GCD)
     int GCD(int a, int b)
     {
         if (b == 0) return a;
         return GCD(b, a % b);
     }
 
+    // Function to check if a number is prime
+    bool isPrime(int n)
+    {
+        if (n <= 1)
+            return false;
+
+        for (int i = 2; i * i <= n; i++)
+        {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    // Function to calculate least common multiple (LCM)
+    int leastCommonMultiple(int a, int b)
+    {
+        int lcm = 1;
+        int maxNum = std::max(a, b);
+        for (int i = maxNum; i <= a * b; i += maxNum)
+        {
+            if (i % a == 0 && i % b == 0)
+            {
+                lcm = i;
+                break;
+            }
+        }
+        return lcm;
+    }
+
+    // Function for square root calculation
     template <typename T>
     double sqrt(T a)
     {
@@ -53,33 +87,5 @@ namespace MathLib
             x = result;
         }
         return result;
-    }
-
-    bool isPrime(int n)
-    {
-        if (n <= 1)
-            return false;
-
-        for (int i = 2; i * i <= n; i++)
-        {
-            if (n % i == 0)
-                return false;
-        }
-        return true;
-    }
-
-    int leastCommonMultiple(int a, int b)
-    {
-        int lcm = 1;
-        int maxNum = std::max(a, b);
-        for (int i = maxNum; i <= a * b; i += maxNum)
-        {
-            if (i % a == 0 && i % b == 0)
-            {
-                lcm = i;
-                break;
-            }
-        }
-        return lcm;
     }
 }
