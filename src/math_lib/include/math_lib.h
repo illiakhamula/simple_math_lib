@@ -1,9 +1,10 @@
 #pragma once
 
 #include <stdexcept>
+#include <vector>
 
 namespace MathLib
-{	
+{   
     // Function for addition
     template <typename T>
     T add(T a, T b)
@@ -37,7 +38,7 @@ namespace MathLib
     }
     
     // Function for comparing two floating point values
-	bool isEqual(double a, double b, double tolerance = 0.000000001);
+    bool isEqual(double a, double b, double tolerance = 0.000000001);
 
     // Square root function
     template <typename T>
@@ -60,13 +61,16 @@ namespace MathLib
         }
         return result;
     }
- 
-    // Function to check whether value is prime
+
     bool isPrime(int n);
 
-    // Function to search least common multiple
-	int leastCommonMultiple(int a, int b);
+    int leastCommonMultiple(int a, int b);
 
-    // Function to search GCD
     int GCD(int a, int b);
+
+    int factorial(int n);
+
+    int fibonacci(int n);
+
+    double average(const std::vector<double>& numbers);
 }
