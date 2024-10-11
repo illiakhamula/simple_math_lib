@@ -39,8 +39,54 @@ namespace MathLib
 
     int GCD(int a, int b)
     {
-		if (b == 0) return a;
-		return GCD(b, a % b);
-	}
-}
+        if (b == 0) return a;
+        return GCD(b, a % b);
+    }
 
+    int factorial(int n)
+    {
+        if (n < 0)
+        {
+            throw std::invalid_argument("Factorial is not defined for negative numbers.");
+        }
+        int result = 1;
+        for (int i = 2; i <= n; ++i)
+        {
+            result *= i;
+        }
+        return result;
+    }
+
+    int fibonacci(int n)
+    {
+        if (n < 0)
+        {
+            throw std::invalid_argument("Fibonacci number is not defined for negative numbers.");
+        }
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        int a = 0, b = 1, result = 0;
+        for (int i = 2; i <= n; ++i)
+        {
+            result = a + b;
+            a = b;
+            b = result;
+        }
+        return result;
+    }
+
+    double average(const std::vector<double>& numbers)
+    {
+        if (numbers.empty())
+        {
+            throw std::invalid_argument("Array cannot be empty.");
+        }
+        double sum = 0;
+        for (double num : numbers)
+        {
+            sum += num;
+        }
+        return sum / numbers.size();
+    }
+}
