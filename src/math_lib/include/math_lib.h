@@ -51,7 +51,7 @@ namespace MathLib
     int leastCommonMultiple(int a, int b);
 
     // Function to calculate factorial
-    int factorial(int n);
+    int factorial(int n); // Объединение определения функции факториала
 
     // Function for square root
     template <typename T>
