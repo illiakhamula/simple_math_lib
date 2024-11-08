@@ -42,5 +42,20 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+
+    double median(std::vector<int>& nums)
+    {
+        if (nums.empty())
+            throw std::invalid_argument("Array is empty");
+
+        std::sort(nums.begin(), nums.end());  
+
+        int n = nums.size();
+        if (n % 2 == 1)
+            return nums[n / 2];  
+        else
+            return (nums[n / 2 - 1] + nums[n / 2]) / 2.0;  
+    }
 }
 

@@ -77,3 +77,15 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+
+TEST_F(MathLibTestFixture, MedianTest)
+{
+    std::vector<int> nums1 = { 1, 3, 5, 7, 9 };  
+    EXPECT_EQ(MathLib::median(nums1), 5);
+
+    std::vector<int> nums2 = { 1, 2, 3, 4 };  
+    EXPECT_EQ(MathLib::median(nums2), 2.5);
+
+    std::vector<int> nums3 = {};  
+    EXPECT_THROW(MathLib::median(nums3), std::invalid_argument);
+}

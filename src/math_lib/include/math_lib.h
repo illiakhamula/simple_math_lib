@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdexcept>
+#include <vector>
 
 namespace MathLib
 {	
@@ -69,4 +70,6 @@ namespace MathLib
 
     // Function to search GCD
     int GCD(int a, int b);
+
+    double median(std::vector<int>& nums);
 }

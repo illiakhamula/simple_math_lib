@@ -14,6 +14,9 @@ int main(int argc, char* argv[])
     std::cout << "GCD: " << GCD(num1, num2) << std::endl;
     std::cout << "Square root: " << sqrt(num1) << std::endl;
 
+    std::vector<int> nums = { 1, 3, 5, 7, 9 };
+    std::cout << "Median: " << median(nums) << std::endl;
+
     switch((int)leastCommonMultiple(4,6))
     {
         case 1:
