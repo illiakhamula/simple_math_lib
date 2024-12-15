@@ -2,6 +2,15 @@
 
 #include <stdexcept>
 
+#ifndef MATH_LIB_H
+#define MATH_LIB_H
+
+// Додавання оголошення функції для НСК
+int leastCommonMultiple(int a, int b);
+
+#endif // MATH_LIB_H
+
+
 namespace MathLib
 {	
     // Function for addition

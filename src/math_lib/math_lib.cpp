@@ -2,6 +2,7 @@
 #include <cmath>
 #include <algorithm>
 
+
 namespace MathLib
 {
     bool isEqual(double a, double b, double tolerance)
@@ -20,6 +21,11 @@ namespace MathLib
                 return false;        
         }
         return true;
+    }
+
+    int leastCommonMultiple(int a, int b) {
+        if (a == 0 || b == 0) return 0; // НСК дорівнює 0, якщо хоча б одне з чисел 0
+        return std::abs(a * b) / std::gcd(a, b);
     }
 
     int leastCommonMultiple(int a, int b)

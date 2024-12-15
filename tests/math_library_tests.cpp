@@ -3,6 +3,7 @@
 #include <fstream>
 #include "math_lib.h"
 
+
 class MathLibTestFixture : public ::testing::Test
 {
 protected:
@@ -76,4 +77,13 @@ TEST_F(MathLibTestFixture, IsPrimeTest)
 TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
+}
+
+// Тести для функції leastCommonMultiple
+TEST(MathLibraryTest, LeastCommonMultiple) {
+    EXPECT_EQ(leastCommonMultiple(12, 18), 36); // НСК(12, 18) = 36
+    EXPECT_EQ(leastCommonMultiple(5, 3), 15);   // НСК(5, 3) = 15
+    EXPECT_EQ(leastCommonMultiple(-5, 3), 15);  // Від'ємні числа
+    EXPECT_EQ(leastCommonMultiple(0, 10), 0);   // Один аргумент дорівнює 0
+    EXPECT_EQ(leastCommonMultiple(7, 0), 0);    // Другий аргумент дорівнює 0
 }
