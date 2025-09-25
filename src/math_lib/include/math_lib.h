@@ -67,6 +67,9 @@ namespace MathLib
     // Function to search least common multiple
 	int leastCommonMultiple(int a, int b);
 
+    // Function to search least common multiple (array)
+	int leastCommonMultiple(int array[], int size);
+
     // Function to search GCD
     int GCD(int a, int b);
 }

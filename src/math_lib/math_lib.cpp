@@ -24,17 +24,14 @@ namespace MathLib
 
     int leastCommonMultiple(int a, int b)
     {
-        int lcm = 1;
-        int maxNum = std::max(a, b);
-        for (int i = maxNum; i <= a * b; i += maxNum)
-        {
-            if (i % a == 0 && i % b == 0)
-            {
-                lcm = i;
-                break;
-            }
-        }
-        return lcm;
+		return abs(a * b) / GCD(a, b);
+    }
+
+    int leastCommonMultiple(int array[], int size) {
+		if size == 0 return 1;
+		int lcm = array[0];
+		for (int i = 1; i < size; i++) lcm = leastCommonMultiple(lcm, array[i]);
+		return lcm;
     }
 
     int GCD(int a, int b)

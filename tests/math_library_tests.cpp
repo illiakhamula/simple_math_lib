@@ -65,6 +65,17 @@ TEST_F(MathLibTestFixture, LeastCommonMultiple)
     EXPECT_NE(MathLib::leastCommonMultiple(4,6), 3);
 }
 
+TEST_F(MathLibTestFixture, LeastCommonMultipleArray)
+{
+    int nums1[] = { 4, 6, 8 };
+    int nums2[] = { 5, 7, 3 };
+    int nums3[] = { 2, 3, 4, 5 };
+
+    EXPECT_EQ(MathLib::leastCommonMultiple(nums1, 3), 24);
+    EXPECT_EQ(MathLib::leastCommonMultiple(nums2, 3), 105);
+    EXPECT_EQ(MathLib::leastCommonMultiple(nums3, 4), 60);
+}
+
 TEST_F(MathLibTestFixture, IsPrimeTest)
 {
     EXPECT_TRUE(MathLib::isPrime(2));
