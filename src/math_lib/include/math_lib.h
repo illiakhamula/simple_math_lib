@@ -69,4 +69,7 @@ namespace MathLib
 
     // Function to search GCD
     int GCD(int a, int b);
+
+    // Function to serach last angel by two others
+    int findThirdAngle(int angle1, int angle2);
 }
