@@ -42,5 +42,14 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+double power_recursive(double base, int exponent) {
+    if (exponent == 0) {
+        return 1.0;
+    }
+    if (exponent < 0) {
+        return 1.0 / power_recursive(base, -exponent);
+    }
+    return base * power_recursive(base, exponent - 1);
+}
 }
 

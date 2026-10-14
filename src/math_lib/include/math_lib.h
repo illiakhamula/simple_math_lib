@@ -69,4 +69,6 @@ namespace MathLib
 
     // Function to search GCD
     int GCD(int a, int b);
+//(Variant 6)
+double power_recursive(double base, int exponent);
 }

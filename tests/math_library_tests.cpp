@@ -77,3 +77,8 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+TEST(MathLibTest, PowerRecursiveTest) {
+    EXPECT_DOUBLE_EQ(MathLib::power_recursive(2.0, 3), 8.0);
+    EXPECT_DOUBLE_EQ(MathLib::power_recursive(5.0, 0), 1.0);
+    EXPECT_DOUBLE_EQ(MathLib::power_recursive(2.0, -2), 0.25);
+}
