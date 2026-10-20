@@ -21,5 +21,12 @@ int main(int argc, char* argv[])
         case 2:
             std::cout << "The least common multiple is 2" << std::endl;
     }
+
+    int number = 0;
+    std::cout << "Enter positive number: \n";
+    std::cin >> number;
+
+    std::cout << "Square root: " << Square_Root_Newton_Method(number);
+
     return 0;
 }
