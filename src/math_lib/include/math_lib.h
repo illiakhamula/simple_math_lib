@@ -69,4 +69,6 @@ namespace MathLib
 
     // Function to search GCD
     int GCD(int a, int b);
+
+    float Square_Root_Newton_Method(int a);
 }

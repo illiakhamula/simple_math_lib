@@ -77,3 +77,19 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+
+TEST_F(MathLibTestFixture, SquareRootNewtonMethod)
+{
+    EXPECT_NEAR(MathLib::Square_Root_Newton_Method(4), 2, 0.1);
+    EXPECT_NEAR(MathLib::Square_Root_Newton_Method(9), 3, 0.1);
+    EXPECT_NEAR(MathLib::Square_Root_Newton_Method(16), 4, 0.1);
+
+    EXPECT_NEAR(MathLib::Square_Root_Newton_Method(2), 1.4142, 0.1);
+    EXPECT_NEAR(MathLib::Square_Root_Newton_Method(10), 3.1623, 0.1);
+    EXPECT_NEAR(MathLib::Square_Root_Newton_Method(123), 11.0905, 0.1);
+
+    EXPECT_THROW(
+        MathLib::Square_Root_Newton_Method(-1),
+        std::invalid_argument
+    );
+}

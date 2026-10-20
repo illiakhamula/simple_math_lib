@@ -1,6 +1,7 @@
 #include "math_lib.h"
 #include <cmath>
 #include <algorithm>
+#include <iostream>
 
 namespace MathLib
 {
@@ -42,5 +43,29 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+    float Square_Root_Newton_Method(int a)
+    {
+        if (a < 0)
+        {
+            throw std::invalid_argument("Negative number");
+        }
+
+        if (a == 0)
+        {
+            return 0;
+        }
+
+        float x = a;
+        float square_root = 0;
+        do
+        {
+            square_root = x - (((x * x) - a) / (2 * x));
+            x = square_root;
+        }
+        while (fabs(sqrtf(a) - square_root) > 0.0001);
+
+        return square_root;
+    }
 }
 
