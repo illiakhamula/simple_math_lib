@@ -1,46 +1,32 @@
 #include "math_lib.h"
-#include <cmath>
 #include <algorithm>
+#include <vector>
+#include <stdexcept>
 
 namespace MathLib
 {
-    bool isEqual(double a, double b, double tolerance)
+    
+    double obchyslytyMedianu(std::vector<double> chysla)
     {
-        return abs(a - b) <= tolerance;
-    }
+        if (chysla.empty())
+        {
+            throw std::invalid_argument("Masyv porozhnii!");
+        }
 
-    bool isPrime(int n)
-    {
-        if (n <= 1)
-            return false;
         
-        for (int i = 2; i * i <= n; i++)
-        {
-            if (n % i == 0)
-                return false;        
-        }
-        return true;
-    }
+        std::sort(chysla.begin(), chysla.end());
 
-    int leastCommonMultiple(int a, int b)
-    {
-        int lcm = 1;
-        int maxNum = std::max(a, b);
-        for (int i = maxNum; i <= a * b; i += maxNum)
-        {
-            if (i % a == 0 && i % b == 0)
-            {
-                lcm = i;
-                break;
-            }
-        }
-        return lcm;
-    }
+        size_t rozmir = chysla.size();
 
-    int GCD(int a, int b)
-    {
-		if (b == 0) return a;
-		return GCD(b, a % b);
-	}
+       
+        if (rozmir % 2 != 0)
+        {
+            return chysla[rozmir / 2];
+        }
+      
+        else
+        {
+            return (chysla[(rozmir / 2) - 1] + chysla[rozmir / 2]) / 2.0;
+        }
+    }
 }
-
