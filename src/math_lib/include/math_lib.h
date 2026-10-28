@@ -67,6 +67,9 @@ namespace MathLib
     // Function to search least common multiple
 	int leastCommonMultiple(int a, int b);
 
-    // Function to search GCD
+        // Function to search GCD
     int GCD(int a, int b);
+
+    // Function to calculate the third angle of a triangle
+    double thirdAngle(double angle1, double angle2);
 }
