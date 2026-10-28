@@ -44,3 +44,19 @@ namespace MathLib
 	}
 }
 
+namespace MathLib
+{
+    unsigned long long fibonacci(int n)
+    {
+        if (n < 0)
+            throw std::invalid_argument("Fibonacci number is not defined for negative n");
+        unsigned long long a = 0, b = 1;
+        for (int i = 0; i < n; i++)
+        {
+            unsigned long long next = a + b;
+            a = b;
+            b = next;
+        }
+        return a;
+    }
+}

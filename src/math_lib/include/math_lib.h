@@ -70,3 +70,9 @@ namespace MathLib
     // Function to search GCD
     int GCD(int a, int b);
 }
+
+namespace MathLib
+{
+    // Function to calculate the n-th Fibonacci number
+    unsigned long long fibonacci(int n);
+}
