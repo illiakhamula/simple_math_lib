@@ -76,4 +76,8 @@ TEST_F(MathLibTestFixture, IsPrimeTest)
 TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
-}
+TEST(MathLibTest, MedianTest) {
+    EXPECT_EQ(findMedian({5, 1, 3}), 3.0);
+    EXPECT_EQ(findMedian({4, 1, 3, 2}), 2.5);
+    EXPECT_EQ(findMedian({7.5}), 7.5);
+    EXPECT_THROW(findMedian({}), std::invalid_argument);
